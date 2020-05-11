@@ -227,7 +227,7 @@ def recognize_from_video():
 
     keypoint_name=["nose","eye_left","eye_right","ear_left","ear_right","shoulder_left","shoulder_right",
     "elbow_left","elbow_right","wrist_left","wrist_right","hip_left","hip_right","knee_left","knee_right",
-    "ankle_left","ankle_right","shoulder_cnter","body_center"]
+    "ankle_left","ankle_right","shoulder_center","body_center"]
 
     with open('output.csv',mode="w") as f:
         f.write("sec , ")
@@ -240,7 +240,7 @@ def recognize_from_video():
         before_person = {}
         while(True):
             capture.set(cv2.CAP_PROP_POS_FRAMES, idx)
-            f.write(""+str(idx*1.0/div/fps)+" , ")
+            f.write(""+str(idx*1.0/fps)+" , ")
             idx = idx + fps/div
 
             ret, frame = capture.read()
